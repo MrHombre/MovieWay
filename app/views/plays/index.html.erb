@@ -5,9 +5,19 @@
 	<h1>There are no books currently in this category</h1>
 
 <% else %>
-  <% @plays.each do |play| %>
-    <h2><%=link_to play.title, play_path(play) %></h2>
-  <% end %>
+
+	<div class="row">
+
+		<% @plays.each do |play| %>
+
+			<div class="col-md-3">
+				<a href="/plays/<%= play.id %>">
+					<%= image_tag play.play_img.url(:play_index), class: "play" %>
+				</a>
+			</div>
+
+		<% end %>
+
+	</div>
+
 <% end %>
-
-
